@@ -34,7 +34,24 @@ ORDER BY ProductId DESC
 LIMIT 10; 
 
 SELECT distinct OrderID
+FROM orderdetails;
+
+SELECT UnitPrice * Quantity AS importe_total
+FROM orderdetails;
+
+SELECT OrderID, UnitPrice * Quantity AS importe_total
 FROM orderdetails
+ORDER BY importe_total DESC
+LIMIT 5
+OFFSET 5;
+
+SELECT ShippedDate AS fecha_retrasada
+FROM orders;
+
+SELECT DATE_ADD(ShippedDate, INTERVAL 5 DAY) AS fecha_retrasada,
+ShippedDate
+FROM orders
+
 
 
 
